@@ -380,19 +380,19 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Servicios',
+            'route'  => 'servicio.index',
+            'icon' => 'fas fa-users',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Tipo Servicios',
+            'route'  => 'tipo_servicio.index',
+            'icon' => 'fas fa-users',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Consulta',
+            'route'  => 'consulta.index',
+            'icon' => 'fas fa-users',
         ],
     ],
 

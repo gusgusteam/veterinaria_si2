@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\TipoServicioController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UsuarioController;
@@ -57,6 +60,39 @@ Route::controller(RoleController::class)->group(function (){
     Route::get('rol/buscar/{id}','buscarPorRol')->name('rol.buscar');
     Route::get('rol/permisos/{id}','permiso_rol')->name('rol.permisos');
     Route::post('rol/update_permiso/{id}','update_permisos')->name('rol.update_permiso');
+});
+
+Route::controller(ServicioController::class)->group(function (){
+    Route::get('servicio','index')->name('servicio.index');
+    Route::get('servicio/edit/{servicio}','edit')->name('servicio.edit');
+    Route::get('servicio/create','create')->name('servicio.create');
+   Route::post('servicio/store','store')->name('servicio.store');
+   Route::post('servicio/update/{servicio}','update')->name('servicio.update');
+    Route::get('servicio/destroy/{servicio}','destroy')->name('servicio.destroy');
+    Route::get('servicio/eliminados','eliminados')->name('servicio.eliminados');
+    Route::get('servicio/restaurar/{servicio}','restaurar')->name('servicio.restore');
+});
+
+Route::controller(TipoServicioController::class)->group(function (){
+    Route::get('tipo_servicio','index')->name('tipo_servicio.index');
+    Route::get('tipo_servicio/edit/{tipo_servicio}','edit')->name('tipo_servicio.edit');
+    Route::get('tipo_servicio/create','create')->name('tipo_servicio.create');
+   Route::post('tipo_servicio/store','store')->name('tipo_servicio.store');
+   Route::post('tipo_servicio/update/{tipo_servicio}','update')->name('tipo_servicio.update');
+    Route::get('tipo_servicio/destroy/{tipo_servicio}','destroy')->name('tipo_servicio.destroy');
+    Route::get('tipo_servicio/eliminados','eliminados')->name('tipo_servicio.eliminados');
+    Route::get('tipo_servicio/restaurar/{tipo_servicio}','restaurar')->name('tipo_servicio.restore');
+});
+
+Route::controller(ConsultaController::class)->group(function (){
+    Route::get('consulta','index')->name('consulta.index');
+    Route::get('consulta/edit/{consulta}','edit')->name('consulta.edit');
+    Route::get('consulta/create','create')->name('consulta.create');
+   Route::post('consulta/store','store')->name('consulta.store');
+   Route::post('consulta/update/{consulta}','update')->name('consulta.update');
+    Route::get('consulta/destroy/{consulta}','destroy')->name('consulta.destroy');
+    Route::get('consulta/eliminados','eliminados')->name('consulta.eliminados');
+    Route::get('consulta/restaurar/{consulta}','restaurar')->name('consulta.restore');
 });
 
 
